@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Engine</title>
+    <title>Home - CraftsHook - Search</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+            background-image: url('img.jpg'); /* Set the background image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            background-attachment: fixed; /* Fixed background image */
         }
 
         .container {
@@ -15,6 +18,8 @@
             margin: 0 auto;
             padding: 50px;
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background for content */
+            border-radius: 10px; /* Rounded corners for the content container */
         }
 
         .logo {
@@ -23,13 +28,14 @@
             margin-bottom: 20px;
         }
 
-        .search-box {
+        /* Apply the search box styles to the second search box */
+        .search-box, .user-input {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .search-input {
+        .search-input, #user-input {
             width: 70%;
             padding: 10px;
             font-size: 18px;
@@ -38,7 +44,7 @@
             outline: none;
         }
 
-        .search-button {
+        .search-button, #send-button {
             background-color: #4285f4;
             color: #fff;
             border: none;
@@ -48,18 +54,108 @@
             cursor: pointer;
         }
 
-        .search-button:hover {
+        .search-button:hover, #send-button:hover {
             background-color: #357ae8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">My Search Engine</div>
+        <div class="logo">Craftshook</div>
         <form class="search-box" action="https://www.google.com/search" method="GET" target="_blank">
             <input type="text" class="search-input" name="q" placeholder="Search the web...">
             <button type="submit" class="search-button">Search</button>
         </form>
     </div>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="user-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/openai-chatbot"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CraftsHook - Search</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+            background-image: url('img.jpg'); /* Set the background image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            background-attachment: fixed; /* Fixed background image */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background for content */
+            border-radius: 10px; /* Rounded corners for the content container */
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Apply the search box styles to the second search box */
+        .search-box, .user-input {
+            display: flex;
+            flex-direction: column; /* Adjust the layout to a vertical column */
+            align-items: center;
+        }
+
+        .search-input, #user-input {
+            width: 100%; /* Make the input fields and buttons span the container's width */
+            margin-bottom: 10px; /* Add space between input fields and buttons */
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .search-button, #send-button {
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .search-button:hover, #send-button:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Craftshook</div>
+        <form class="search-box" action="https://www.google.com/search" method="GET" target="_blank">
+            <input type="text" class="search-input" name="q" placeholder="Search the web...">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="user-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/openai-chatbot"></script>
+    <script src="chatbot.js"></script>
 </body>
 </html>
